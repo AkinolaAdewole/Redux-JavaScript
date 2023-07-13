@@ -8,6 +8,9 @@ const bindActionCreators= redux.bindActionCreators
 const CAKE_ORDERED= 'CAKE_ORDERED';
 const CAKE_RESTOCKED='CAKE_RESTOCKED';
 
+const ICECREAM_ORDERED='ICECREAM_ORDERED';
+const ICECREAM_RESTOCKED='ICECREAM_RESTOCKED';
+
 const orderCake=()=>{
     return {
         type: CAKE_ORDERED,
@@ -47,9 +50,14 @@ const reducer=(state=initialState, action)=>{
 const store =createStore(reducer);
 console.log("initial State", store.getState());
 const unSubscribe=store.subscribe(()=>console.log('update state', store.getState()));
-store.dispatch(orderCake());
-store.dispatch(orderCake());
-store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(orderCake());
+// store.dispatch(restoreCake(3));
 
-store.dispatch(restoreCake(3))
+const action=bindActionCreators({orderCake,restoreCake},store.dispatch)
+store.dispatch(orderCake());
+store.dispatch(orderCake());
+store.dispatch(orderCake());
+store.dispatch(restoreCake(3));
 unSubscribe();

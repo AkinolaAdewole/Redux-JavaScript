@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "immer": "^10.0.2",
     "redux": "^4.2.1",
     "regenerator-runtime": "^0.13.11"
   },

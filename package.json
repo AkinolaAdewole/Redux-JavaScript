@@ -6,6 +6,7 @@
   "dependencies": {
     "immer": "^10.0.2",
     "redux": "^4.2.1",
+    "redux-logger": "^3.0.6",
     "regenerator-runtime": "^0.13.11"
   },
   "scripts": {
